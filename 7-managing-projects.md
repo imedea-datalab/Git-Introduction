@@ -69,6 +69,6 @@ When you finish a task, don't just close it silently. Add a final comment summar
 
 ---
 **Navigation:**
-[Permissions](8-permissions.md)
+[8. Permissions](8-permissions.md)
 ---
 
