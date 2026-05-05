@@ -69,6 +69,7 @@ When you finish a task, don't just close it silently. Add a final comment summar
 
 ---
 **Navigation:**
-[8. Permissions](8-permissions.md)
----
+- [7. Mastering Issues & GitHub Projects](7-managing-projects.md)  
+- [8. Permissions](8-permissions.md)
+
 
