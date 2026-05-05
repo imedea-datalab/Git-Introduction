@@ -1,4 +1,4 @@
-# How to Enforce Code Reviews
+# 8. How to Enforce Code Reviews
 
 You can enforce code reviews using **"Branch Protection Rules"** (GitHub) or **"Protected Branches"** (GitLab). These settings also allow you to grant specific people "bypass" privileges, meaning they can push or merge directly to the branch without needing a review.
 
@@ -17,3 +17,9 @@ You can enforce code reviews using **"Branch Protection Rules"** (GitHub) or **"
 
 > **📝 Note for Admins:** 
 > If you are the repository owner, you can check **Include administrators** to ensure the rules apply to you as well. If you leave it unchecked, you will automatically give yourself a "bypass."
+
+---
+**Navigation:**
+1. [7. Mastering Issues & GitHub Projects](7-managing-projects.md)  
+2. [8. Permissions](8-permissions.md)
+---
