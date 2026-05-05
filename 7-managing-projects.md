@@ -1,4 +1,4 @@
-# 6. Mastering Issues & GitHub Projects
+# 7. Mastering Issues & GitHub Projects
 
 While Git tracks your code, **GitHub Projects and Issues track your team's workflow.** 
 
