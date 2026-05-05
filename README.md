@@ -1,0 +1,1 @@
+This is a github [blog tutorial](https://imedea-datalab.github.io/Git-Introduction/) on the topic - "How to use git". They are a series of markdowns which are availaible publicly through a link as a blog.
