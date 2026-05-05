@@ -69,6 +69,6 @@ When you finish a task, don't just close it silently. Add a final comment summar
 
 ---
 **Navigation:**
-🏠 [Home](index.md) | 📖 [1. What is Git?](1-what-is-git.md) | 🚀 [2. Getting Started](2-getting-started.md) | 🔄 [3. Daily Workflow](3-daily-workflow.md) | 🤝 [4. Pull Requests](4-pull-requests.md) | 📋 [5. Issues](5-issues-and-projects.md) | 🗂️ [6. Managing Projects](6-managing-projects.md)
+[Permissions](8-permissions.md)
 ---
 
