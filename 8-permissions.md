@@ -20,6 +20,6 @@ You can enforce code reviews using **"Branch Protection Rules"** (GitHub) or **"
 
 ---
 **Navigation:**
-7. [Mastering Issues & GitHub Projects](7-managing-projects.md)  
-8. [Permissions](8-permissions.md)
+- [7. Mastering Issues & GitHub Projects](7-managing-projects.md)  
+- [8. Permissions](8-permissions.md)
 ---
