@@ -62,6 +62,47 @@ You (or anyone else on the team), who is reviewing the PR can then look at exact
 
 *(Note: Git will track every file in your project folder, except for the ones you explicitly tell it to ignore using a special file called `.gitignore`. This is where we hide passwords, temporary files, and heavy local installations).*
 
+#### 5. Everything Lives in Two Places: Your Computer and the Cloud
+
+This is something that confuses a lot of beginners, so let's make it crystal clear.
+
+In Git, your project doesn't just live in one place — it lives in **two places at the same time**:
+
+1. **Locally** — on your own computer (your laptop, your workstation, whatever you're coding on).
+2. **Remotely** — on a server in the cloud (like GitHub, GitLab, etc.). This is where the whole team can see and access the project.
+
+And here's the key part: **this applies to everything — the main branch, any new branches, all of it.**
+
+The `main` branch? It exists on the remote server (the cloud), **and** it also exists on your local computer as a copy. When Rosa creates a branch called `temperature-plots`? That branch starts on her local computer, **and** she also pushes it up to the remote server so others can see it.
+
+Think of it like this: the remote (cloud) version is the **shared, official copy** that everyone on the team can access. Your local version is your **personal workspace** where you make changes before sharing them.
+
+**So how does your code actually get from your computer to the main project?** It's a multi-step journey. Let's walk through it:
+
+**Step 1: You create a branch on your local computer.**
+You say, *"I want to work on the salinity code."* So you create a new branch locally. Right now, this branch only exists on your machine — nobody else can see it yet.
+
+**Step 2: You make changes and commit them locally.**
+You write your code, test it, and when you're happy with a chunk of work, you commit it. These commits are saved on your local branch. Still, nobody else can see your work — it's all on your laptop.
+
+**Step 3: You push your local branch to the remote (cloud).**
+When you're ready to share your work (or just want a backup in the cloud), you **push** your branch. This uploads your branch and all its commits to the remote server. Now your branch exists in both places — on your computer and on the cloud. Your teammates can now see your branch on GitHub.
+
+**Step 4: You open a Pull Request to merge your remote branch into the remote main branch.**
+Here's the thing — even though your branch is now on the remote server, it's still separate from the main branch. Your code is sitting on your branch, not on main. To get it into main, you open a **Pull Request** (PR) on GitHub. This is you saying, *"Hey team, my branch is ready. Please review it and merge it into main."*
+
+**Step 5: After review, your branch gets merged into main on the remote.**
+Once the team approves your PR, your changes get merged into the `main` branch — on the remote server. Now the official, shared main branch has your new code!
+
+**Step 6: Everyone pulls the updated main branch to their local computer.**
+After the merge, the remote `main` is updated, but everyone's local copy of `main` is still the old version. So each team member (including you!) needs to **pull** the latest version of `main` from the remote to their local computer to stay up to date.
+
+Here's a simple way to remember the whole flow:
+
+> **Local branch → Push to → Remote branch → Pull Request → Remote main → Pull to → Local main**
+
+It's a multi-step process, but each step has a clear purpose: you work locally so you don't break anything for others, you push to the remote so the team can see your work, and you merge through a Pull Request so the code gets reviewed before it goes into the main project.
+
 ---
 **Navigation:**
 🏠 [Home](index.md) | 📖[1. What is Git?](1-what-is-git.md) | 🚀 [2. Getting Started](2-getting-started.md) | 🔄 [3. Daily Workflow](3-daily-workflow.md) | 🤝 [4. Pull Requests](4-pull-requests.md) | 📋[5. Issues & Projects](5-issues-and-projects.md)
