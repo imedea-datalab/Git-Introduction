@@ -1,38 +1,51 @@
 ## 3. The Daily Git Workflow
 
-We don't just push code directly into the final product. We use a step-by-step process to ensure everything is reviewed and safe. 
+Now that you know what Git is and why it's useful (see [1. What is Git?](1-what-is-git.md)), let's talk about what you actually do every day when working with Git. It's a simple step-by-step process — once you do it a few times, it becomes second nature.
 
 ### Step 1: Create a New Branch
-The **main branch** is where all the final, working code lives. When you want to add a new feature or fix a bug, you must create a safe, isolated copy of the code called a **branch**. 
+Remember how we talked about branching? The main branch has all the final, tested code. You never want to mess with it directly. So the first thing you do is create your own branch — your own side road — to work on.
 
-To create a new branch and switch to it immediately, use the `switch` command:
 ```bash
 git switch -c my-new-feature
 ```
 
-### Step 2: Make Your Changes & Add to the Staging Area
-Once you've made your changes, you need to prepare them to be saved. This is called **Staging**. 
-The staging area is like a shipping box. It allows you to review what you are about to save before you actually tape the box shut. You are telling Git, *"These are the specific files I want in my next snapshot."*
+This creates a new branch called `my-new-feature` and switches you to it right away. From here, all the changes you make only happen on your branch.
 
+### Step 2: Make Your Changes & Stage Them
+You've written some code, changed a few files — great! But before you can save a snapshot (a commit), you need to tell Git **which files** you want to include in that snapshot.
+
+This step is called **staging**, and it's like packing a suitcase before a trip. You might have changed 5 files, but maybe only 3 of them are ready to go. Staging lets you pick exactly which ones go into the next commit. The rest stay behind — you can include them in a future commit when they're ready.
+
+To add all your changed files at once (put everything in the suitcase):
 ```bash
-# To add all changed files at once
 git add .
 ```
 
+**💡 Tip:** If you staged everything but realize you don't want to include some files, no worries! In VS Code, just open the **Source Control sidebar** (the little branch icon on the left). You'll see all your staged files listed there — simply click the **−** (minus) button next to any file to unstage it. Easy.
+
+**🚫 Files you NEVER want to track:** Some files should never end up in Git at all. For example:
+- **Large data files** (like your ocean datasets) — GitHub has a file size limit and isn't designed to store big data files.
+- **Secrets and passwords** (like API keys or database credentials) — if your repository is public, anyone on the internet can see them!
+
+For these, you add them to a special file called **`.gitignore`**. Anything listed in `.gitignore` is completely invisible to Git — it won't track them, stage them, or include them in any snapshot. Ever.
+
 ### Step 3: Commit Your Changes
-Now that your files are in the staging area, it’s time to take the snapshot. Remember, this generates that unique hash! Because the hash is just a number, we add a text message.
+Now your files are staged and ready. It's time to take the snapshot — this is the **commit** we talked about in [1. What is Git?](1-what-is-git.md). Remember, Git will generate a unique hash for this snapshot. Since hashes are just long unreadable numbers, we always add a short message describing what we changed:
+
 ```bash
 git commit -m "Add new login function"
 ```
 
 ### Step 4: Pull Before You Push! (The Golden Rule)
-Before you send your code to the remote server, it is a golden rule to **pull** any new updates that your teammates might have added while you were working. This prevents conflicts!
+Before you send your code to the remote server, always **pull** first (see [4. Pull Requests](4-pull-requests.md) for a detailed explanation of what pulling means). This grabs any new updates that your teammates might have added while you were working, so your code stays up to date and you avoid conflicts.
+
 ```bash
 git pull origin main
 ```
 
 ### Step 5: Push to Remote
-Your changes currently only exist on your computer. To share your progress, you need to **push** your new branch up to the remote repository.
+Right now your changes only exist on your computer. To share your work with the team, you need to **push** your branch up to the remote repository (the shared version that lives online).
+
 ```bash
 git push origin my-new-feature
 ```
@@ -41,7 +54,7 @@ git push origin my-new-feature
 > If this is the very first time you are pushing a newly created branch, you might see this error:
 > `fatal: The current branch my-new-feature has no upstream branch.`
 > 
-> Don't panic! This just happens because your new branch exists locally, but doesn't exist on the remote cloud yet. Git is telling you to link them. Simply copy/paste the command Git suggests:
+> Don't panic! This just means your new branch exists on your computer, but doesn't exist on the remote server yet. Git is simply asking you to link them. Just copy and paste the command Git suggests:
 > ```bash
 > git push --set-upstream origin my-new-feature
 > ```
